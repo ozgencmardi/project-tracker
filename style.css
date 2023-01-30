@@ -1,0 +1,93 @@
+:root {
+    --primary-color: #2c3e50;
+    --background-color: #ecf0f1;
+    --light: #fff;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+.body {
+    font-family: 'Fira Sans', sans-serif;
+    background: var(--bg-color);
+}
+
+.jumbotron {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.card-body {
+    padding: 0;
+    margin: 0;
+    border: 1px solid var(--primary-color);
+}
+
+.card-title {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 25px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-text {
+    padding: 15px 25px;
+    background-color: var(--background-color);
+    margin: 0;
+}
+
+.card-button {
+    background-color: var(--primary-color);
+    padding: 0;
+}
+
+.card-form ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.card-form li {
+    padding: 15px 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-light {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
+
+thead {
+    background-color: #e74c3c;
+    color: var(--light);
+}
+
+th {
+    border: 1px solid var(--light);
+}
+
+.custom-jumbotron,
+.custom-card .card-header,
+.custom-card .card-footer,
+.custom-modal .modal-header,
+.custom-modal .modal-footer {
+  background-color: var(--primary-color);
+  color: var(--light);
+}
+
+.custom-card {
+  border-color: var(--primary-color);
+}
+
+.custom-card .card-body,
+.custom-modal .modal-body {
+  background-color: var(--light);
+  color: var(--primary-color);
+}
+
+.light {
+    color: var(--light);
+}

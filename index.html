@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Tracker</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="jumbotron text-center">
+        <h1>Project Tracker</h1>
+        <h3>Current Time & Date:</h3>
+        <h3><span id="current-time"></span></h3>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Instructions</div>
+                        <div class="card-text">Click the button below to open a form and provide information for the following.</div>
+                        <div class="card-form">
+                            <ul>
+                                <li>Project Name</li>
+                                <li>Project Type</li>
+                                <li>Due Date</li>
+                                <li>Hourly Rate</li>
+                            </ul>
+                        </div>
+                        <div class="card-button text-center p-3"><button class="btn btn-light btn-block" data-toggle="modal" data-target="#project-modal">Add Project</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered custom-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Project Name</th>
+                          <th scope="col">Project Type</th>
+                          <th scope="col">Hourly Rate ($)</th>
+                          <th scope="col">Due Date</th>
+                          <th scope="col" class="p-3"></th>
+                        </tr>
+                      </thead>
+                    <tbody id="project-list"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
+    aria-labelledby="project-modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectFormModalLabel">New Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="light">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="project-form">
+                        <div class="modal-body">
+                          <div class="form-group">
+                            <label for="project-name-input">Project Name</label>
+                            <input type="text" id="project-name-input" class="form-control" placeholder="Enter the project's name"
+                              required />
+                          </div>
+              
+                          <div class="form-group">
+                            <label for="project-type-input">Project Type</label>
+                            <select class="form-control" id="project-type-input">
+                              <option selected disabled>Pick one...</option>
+                              <option value="Web Application (Front End)">Web Application (Front End)</option>
+                              <option value="Web Application (Back End)">Web Application (Back End)</option>
+                              <option value="Web Application (Full Stack)">Web Application (Full Stack)</option>
+                              <option value="Mobile Application">Mobile Application</option>
+                              <option value="Print Campaign">Print Campaign</option>
+                              <option value="Digital Marketing Campaign">Digital Marketing Campaign</option>
+                            </select>
+                          </div>
+              
+                          <div class="form-group">
+                            <label for="hourly-rate-input">Hourly Rate ($)</label>
+                            <input type="number" id="hourly-rate-input" class="form-control" placeholder="$" min="0" required />
+                          </div>
+              
+                          <div class="form-group">
+                            <label for="due-date-input">Due Date</label>
+                            <input type="text" min='1' id="due-date-input" class="form-control" placeholder="When is the project due?"
+                              required />
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-danger">Submit</button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+             
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="script.js"></script>    
+    </body>
+</html>
